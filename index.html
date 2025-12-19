@@ -1,38 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>D’s Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;padding:2rem;max-width:900px;margin:auto}
-  a{text-decoration:none}
-  .card{border:1px solid #eee;border-radius:12px;padding:1rem 1.25rem;margin:1rem 0;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-  h1{margin-bottom:.25rem}
-  .pill{display:inline-block;background:#f1f5f9;border-radius:999px;padding:.25rem .6rem;font-size:.9rem;margin-right:.35rem}
-  .muted{color:#64748b;font-size:.95rem}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dhanashree Patil — Portfolio</title>
+  <meta name="description" content="Selected projects by Dhanashree Patil – web apps, PWAs, data viz." />
+  <link rel="icon" href="data:," />
+  <style>
+    :root{
+      --bg:#0b0d10; --panel:#12161b; --muted:#9aa4b2; --text:#e8eef6; --acc:#6ea8fe; --chip:#1f2630; --ok:#00d1b2;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:auto;padding:28px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    header h1{font-size:28px;margin:0}
+    .tagline{color:var(--muted);margin-top:6px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px;margin-top:22px}
+    .card{grid-column:span 12;background:var(--panel);border:1px solid #1a1f27;border-radius:18px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,.25)}
+    @media(min-width:900px){.card{grid-column:span 12}}
+    .card-body{display:grid;grid-template-columns:360px 1fr;gap:22px}
+    @media(max-width:800px){.card-body{grid-template-columns:1fr}}
+    .shot{display:block;width:100%;height:100%;object-fit:cover;background:#0f1318}
+    .pad{padding:20px}
+    h2{margin:0 0 6px 0;font-size:22px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+    .chip{background:var(--chip);border:1px solid #273142;border-radius:999px;padding:6px 10px;font-size:12px;color:#c7d2e3}
+    .meta{color:var(--muted);font-size:14px;margin-top:6px}
+    .btns{display:flex;gap:10px;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:#0f1420;border:1px solid #263043}
+    .btn.primary{background:#1b2331;border-color:#2a3548}
+    .list{margin:10px 0 0 18px}
+    footer{color:#7b8794;text-align:center;margin:36px 0 10px}
+  </style>
 </head>
 <body>
-<h1>Projects</h1>
-<p class="muted">Selected work built during CareerFoundry — deployed & open-source.</p>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Dhanashree Patil - Portfolio</h1>
+        <div class="tagline">PWA apps • React • Data visualization • Testing</div>
+      </div>
+    </header>
 
-<div class="card">
-  <h2>Meet App (PWA)</h2>
-  <p class="muted">Filter by city • Specify events • Offline (PWA) • Installable • Recharts visualizations</p>
-  <p>
-    <span class="pill">React</span>
-    <span class="pill">Vite</span>
-    <span class="pill">PWA</span>
-    <span class="pill">Recharts</span>
-    <span class="pill">OAuth2</span>
-  </p>
-  <p>
-    🔗 <a href="https://meet-app-lilac.vercel.app" target="_blank" rel="noopener">Live app</a> &nbsp;|&nbsp;
-    💻 <a href="https://github.com/dpatil1719/meet-app" target="_blank" rel="noopener">Source</a> &nbsp;|&nbsp;
-    📝 <a href="https://github.com/dpatil1719/meet-app#readme" target="_blank" rel="noopener">README</a>
-  </p>
-</div>
+    <section class="grid">
 
+      <!-- Meet App card -->
+      <article class="card">
+        <div class="card-body">
+          <img class="shot" src="assets/meet-app.png" alt="Screenshot of Meet App" />
+          <div class="pad">
+            <h2>Meet App (PWA)</h2>
+            <div class="meta">Serverless auth • Offline support • TDD/BDD • Recharts</div>
+
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">Vite</span>
+              <span class="chip">PWA</span>
+              <span class="chip">Jest/Cucumber</span>
+              <span class="chip">Recharts</span>
+              <span class="chip">Vercel</span>
+            </div>
+
+            <ul class="list">
+              <li>Filter events by city, set event count, show/hide details.</li>
+              <li>Offline-ready PWA with “Add to Home Screen”.</li>
+              <li>Data viz: genres pie chart & events-by-city scatter chart.</li>
+            </ul>
+
+            <div class="btns">
+              <a class="btn primary" href="https://meet-app-lilac.vercel.app" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn" href="https://github.com/dpatil1719/meet-app" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Duplicate this whole article block for more projects -->
+
+    </section>
+
+    <footer>© <span id="y"></span> Dhanashree Patil — Built with GitHub Pages</footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
+<!-- Add these in <head> next time you edit -->
+<meta property="og:title" content="Dhanashree Patil — Portfolio">
+<meta property="og:description" content="Selected projects: React PWAs, data viz, testing.">
+<meta property="og:image" content="https://dpatil1719.github.io/assets/meet-app.png">
+<meta property="og:type" content="website">
