@@ -6,10 +6,15 @@
   <title>Dhanashree Patil — Portfolio</title>
   <meta name="description" content="Selected projects by Dhanashree Patil – web apps, PWAs, data viz." />
   <link rel="icon" href="data:," />
+
+  <!-- OpenGraph (moved into <head>) -->
+  <meta property="og:title" content="Dhanashree Patil — Portfolio">
+  <meta property="og:description" content="Selected projects: React PWAs, data viz, testing.">
+  <meta property="og:image" content="https://dpatil1719.github.io/assets/meet-app.png">
+  <meta property="og:type" content="website">
+
   <style>
-    :root{
-      --bg:#0b0d10; --panel:#12161b; --muted:#9aa4b2; --text:#e8eef6; --acc:#6ea8fe; --chip:#1f2630; --ok:#00d1b2;
-    }
+    :root{ --bg:#0b0d10; --panel:#12161b; --muted:#9aa4b2; --text:#e8eef6; --acc:#6ea8fe; --chip:#1f2630; }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
@@ -22,7 +27,7 @@
     @media(min-width:900px){.card{grid-column:span 12}}
     .card-body{display:grid;grid-template-columns:360px 1fr;gap:22px}
     @media(max-width:800px){.card-body{grid-template-columns:1fr}}
-    .shot{display:block;width:100%;height:100%;object-fit:cover;background:#0f1318}
+    .shot{display:block;width:100%;height:auto;background:#0f1318;border-radius:0}
     .pad{padding:20px}
     h2{margin:0 0 6px 0;font-size:22px}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
@@ -45,22 +50,18 @@
     </header>
 
     <section class="grid">
-
       <!-- Meet App card -->
       <article class="card">
         <div class="card-body">
-          <img class="shot" src="assets/meet-app.png" alt="Screenshot of Meet App" />
+          <!-- add ?v=1 to bust cache; keep path exactly 'assets/meet-app.png' -->
+          <img class="shot" src="assets/meet-app.png?v=1" alt="Screenshot of Meet App" width="640" height="360" loading="lazy" />
           <div class="pad">
             <h2>Meet App (PWA)</h2>
             <div class="meta">Serverless auth • Offline support • TDD/BDD • Recharts</div>
 
             <div class="chips">
-              <span class="chip">React</span>
-              <span class="chip">Vite</span>
-              <span class="chip">PWA</span>
-              <span class="chip">Jest/Cucumber</span>
-              <span class="chip">Recharts</span>
-              <span class="chip">Vercel</span>
+              <span class="chip">React</span><span class="chip">Vite</span><span class="chip">PWA</span>
+              <span class="chip">Jest/Cucumber</span><span class="chip">Recharts</span><span class="chip">Vercel</span>
             </div>
 
             <ul class="list">
@@ -76,9 +77,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Duplicate this whole article block for more projects -->
-
     </section>
 
     <footer>© <span id="y"></span> Dhanashree Patil — Built with GitHub Pages</footer>
@@ -86,8 +84,3 @@
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
-<!-- Add these in <head> next time you edit -->
-<meta property="og:title" content="Dhanashree Patil — Portfolio">
-<meta property="og:description" content="Selected projects: React PWAs, data viz, testing.">
-<meta property="og:image" content="https://dpatil1719.github.io/assets/meet-app.png">
-<meta property="og:type" content="website">
